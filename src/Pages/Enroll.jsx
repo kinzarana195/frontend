@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import Footer from "../Components/Footer";
 
 const Enroll = () => {
   const query = new URLSearchParams(useLocation().search);
@@ -61,6 +62,7 @@ const Enroll = () => {
           </button>
         </form>
       </div>
+          <Footer />
     </section>
   );
 };

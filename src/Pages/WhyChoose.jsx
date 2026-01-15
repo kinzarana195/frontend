@@ -1,5 +1,6 @@
 import React from "react";
 import { FaUsers, FaLightbulb, FaHandsHelping, FaAward } from "react-icons/fa";
+import chooseImg from "../assets/about4.png"; 
 
 const WhyChoose = () => {
   const features = [
@@ -11,43 +12,65 @@ const WhyChoose = () => {
     {
       icon: <FaLightbulb />,
       title: "Practical Learning",
-      desc: "Hands-on projects and practical examples for better understanding."
+      desc: "Hands-on projects that prepare you for real industry challenges."
     },
     {
       icon: <FaHandsHelping />,
       title: "Support & Mentorship",
-      desc: "Dedicated guidance and support throughout the course."
+      desc: "Continuous guidance to help you grow with confidence."
     },
     {
       icon: <FaAward />,
       title: "Industry Recognition",
-      desc: "Certificates recognized by top companies and organizations."
+      desc: "Certificates valued by companies and organizations."
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-28 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center px-30">
 
-        {/* Section Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900">Why Choose Us</h2>
-          <p className="mt-4 text-gray-600">
-            We provide the best training and digital services to help you succeed.
+        <div data-aos="fade-right">
+          <p className="text-blue-600 font-semibold tracking-wide mb-3">
+            WHY CHOOSE US
           </p>
+
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10">
+            Why Students & Businesses Trust Us
+          </h2>
+
+          <div className="space-y-8">
+            {features.map((item, index) => (
+              <div
+                key={index}
+                className="flex gap-6 items-start group"
+              >
+                <div className="text-blue-600 text-3xl transition-transform duration-300 group-hover:scale-110">
+                  {item.icon}
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
         </div>
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-8">
-          {features.map((feature, index) => (
-            <div key={index} className="p-6 border rounded-xl border-blue-700 hover:shadow-lg transition text-center">
-              <div className="text-4xl text-blue-600 mb-4 flex justify-center">{feature.icon}</div>
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-gray-600">{feature.desc}</p>
-            </div>
-          ))}
+        <div data-aos="fade-left">
+<img
+            src={chooseImg}
+            alt="Why Choose Us"
+            className="w-full h-[420px] object-cover rounded-xl"
+          />
+          
         </div>
-
       </div>
     </section>
   );

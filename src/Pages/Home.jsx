@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../Components/Footer";
 import HomeServices from "../Components/HomeServices";
-import About from "./About";
+import AboutIntro from "../Components/AboutIntro";
 import Testimonials from "./Testimonials";
 import Contact from "./Contact";
 import heroBg from "../assets/hero.png";
@@ -70,7 +71,7 @@ const Home = () => {
       </section>
 
       <section data-aos="fade-up" className="py-24 bg-white">
-        <About />
+  <AboutIntro />
       </section>
 
       <section data-aos="fade-up" className="py-24 bg-gray-50">
@@ -80,6 +81,7 @@ const Home = () => {
       <section data-aos="fade-up" className="py-24 bg-white">
         <Contact />
       </section>
+      <Footer />
     </>
   );
 };

@@ -1,68 +1,85 @@
 import React from "react";
-import aboutImg1 from "../assets/about1.jpg"; 
-import aboutImg2 from "../assets/about2.png"; 
-import aboutImg3 from "../assets/about3.png"; 
-import aboutImg4 from "../assets/about4.png"; 
+import AboutIntro from "../Components/AboutIntro";
+import Footer from "../Components/Footer";
+import aboutImg2 from "../assets/about2.png";
+import processImg from "../assets/about3.png";
+import WhyChoose from "./WhyChoose";
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-start">
+    <section id="about" className="bg-white">
+      <AboutIntro />
+      <div className="max-w-7xl mx-auto px-6 py-28 grid md:grid-cols-2 gap-16 items-center">
 
-        {/* LEFT SIDE: Text + Stats */}
         <div data-aos="fade-right">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            About TeqTronics
-          </h1>
-          <p className="text-gray-700 text-lg md:text-xl mb-8 leading-relaxed">
-            We are a professional IT solutions and training provider committed to empowering businesses and students with the latest digital skills. Our goal is to provide quality services and hands-on learning to help you succeed in the digital world.
-          </p>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 gap-6">
-            <div className="bg-white p-4 md:p-6 rounded-xl shadow text-center">
-              <h2 className="text-3xl font-bold text-blue-600">200+</h2>
-              <p className="text-gray-600 mt-1">Projects Completed</p>
-            </div>
-            <div className="bg-white p-4 md:p-6 rounded-xl shadow text-center">
-              <h2 className="text-3xl font-bold text-blue-600">500+</h2>
-              <p className="text-gray-600 mt-1">Students Trained</p>
-            </div>
-            <div className="bg-white p-4 md:p-6 rounded-xl shadow text-center">
-              <h2 className="text-3xl font-bold text-blue-600">10+</h2>
-              <p className="text-gray-600 mt-1">Years Experience</p>
-            </div>
-            <div className="bg-white p-4 md:p-6 rounded-xl shadow text-center">
-              <h2 className="text-3xl font-bold text-blue-600">50+</h2>
-              <p className="text-gray-600 mt-1">Expert Trainers</p>
-            </div>
-          </div>
-        </div>
-
-        {/* RIGHT SIDE: Staggered Images like Enablers */}
-        <div className="grid grid-cols-2 gap-4" data-aos="fade-left">
-          <img
-            src={aboutImg1}
-            alt="Team"
-            className="w-full h-[180px] md:h-[220px] rounded-lg shadow-lg object-cover"
-          />
           <img
             src={aboutImg2}
-            alt="Office"
-            className="w-full h-[180px] md:h-[220px] rounded-lg shadow-lg object-cover mt-6 md:mt-12"
-          />
-          <img
-            src={aboutImg3}
-            alt="Project"
-            className="w-full h-[180px] md:h-[220px] rounded-lg shadow-lg object-cover"
-          />
-          <img
-            src={aboutImg4}
-            alt="Training"
-            className="w-full h-[180px] md:h-[220px] rounded-lg shadow-lg object-cover mt-6 md:mt-12"
+            alt="Who We Are"
+            className="w-full h-[420px] object-cover rounded-xl"
           />
         </div>
+
+        <div data-aos="fade-left">
+          <p className="text-blue-600 font-semibold tracking-wide mb-3">
+            WHO WE ARE
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            A Team Built on Innovation & Quality
+          </h2>
+          <p className="text-gray-600 text-lg leading-relaxed mb-4">
+            We are designers, developers, and mentors passionate about
+            creating meaningful digital experiences.
+          </p>
+          <p className="text-gray-600 text-lg leading-relaxed">
+            Our approach focuses on clarity, performance, and long-term
+            success for our clients and students.
+          </p>
+        </div>
       </div>
+
+      <WhyChoose />
+
+      <div className="bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 py-28 grid md:grid-cols-2 gap-16 items-center">
+
+          <div data-aos="fade-right">
+            <p className="text-blue-600 font-semibold tracking-wide mb-3">
+              OUR PROCESS
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10">
+              How We Bring Ideas to Life
+            </h2>
+
+            <div className="space-y-8 border-l-2 border-blue-600 pl-8">
+              {[
+                ["Idea & Research", "Understanding goals and planning strategy."],
+                ["Design", "Crafting clean and intuitive interfaces."],
+                ["Development", "Building scalable and secure solutions."],
+                ["Deployment", "Launching with performance optimization."]
+              ].map(([title, desc], i) => (
+                <div key={i}>
+                  <h4 className="font-semibold text-lg text-gray-900">
+                    {title}
+                  </h4>
+                  <p className="text-gray-600">
+                    {desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div data-aos="fade-left">
+            <img
+              src={processImg}
+              alt="Process"
+              className="w-full h-[450px] object-cover rounded-xl"
+            />
+          </div>
+
+        </div>
+      </div>
+    <Footer />
     </section>
   );
 };
